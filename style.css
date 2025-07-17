@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Remove the blue highlight box on tap */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    /* Improve overall touch performance */
+    touch-action: manipulation;
 }
 
 body {
@@ -10,6 +15,39 @@ body {
     color: #e2e8f0;
     min-height: 100vh;
     padding: 20px;
+}
+
+/* Ensure smooth scrolling on mobile */
+html {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Allow text selection for content areas only */
+.subject-name,
+.day-header h2,
+.time-slot,
+.header p,
+.day-date,
+.batch-info span,
+.no-classes p {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Prevent text selection on interactive elements */
+.toggle-btn,
+.day-btn,
+button,
+.schedule-item,
+.day-header,
+.subject-type,
+.today-indicator {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .container {
@@ -56,11 +94,24 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    /* Mobile touch improvements */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 44px;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .toggle-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.toggle-btn:active {
+    transform: scale(0.95) translateY(-2px);
+    opacity: 0.9;
 }
 
 .toggle-btn.active {
@@ -85,11 +136,24 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    /* Mobile touch improvements */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 44px;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .day-btn:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-1px);
+}
+
+.day-btn:active {
+    transform: scale(0.95) translateY(-1px);
+    opacity: 0.9;
 }
 
 .day-btn.active {
@@ -159,12 +223,19 @@ body {
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    /* Remove any potential tap highlights */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .schedule-item:hover {
     background: rgba(255, 255, 255, 0.12);
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.schedule-item:active {
+    transform: scale(0.98) translateY(-1px);
+    opacity: 0.9;
 }
 
 .schedule-item::before {
@@ -258,6 +329,34 @@ body {
     font-size: 3rem;
     margin-bottom: 1rem;
     opacity: 0.5;
+}
+
+/* Icons in clickable elements */
+.toggle-btn i,
+.day-btn i,
+.schedule-item i {
+    pointer-events: none;
+}
+
+/* Improve icon interactions */
+.fas, .far, .fal, .fab {
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: none;
+}
+
+/* Better focus states for accessibility */
+.toggle-btn:focus,
+.day-btn:focus {
+    outline: 2px solid rgba(74, 144, 226, 0.6);
+    outline-offset: 2px;
+}
+
+/* Remove focus outline on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .toggle-btn:focus,
+    .day-btn:focus {
+        outline: none;
+    }
 }
 
 @media (max-width: 768px) {
