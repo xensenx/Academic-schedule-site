@@ -23,7 +23,7 @@ const timetableData = {
         { time: "2:30–3:30", subject: "CN", type: "Theory", batch: "All" }
     ],
     Thursday: [
-        { time: "9:00–10:00", subject: "Kannada", type: "Theory", batch: "Optional" },
+        { time: "9:00–10:00", subject: "Kannada", type: "Theory", batch: "All" },
         { time: "10:00–11:00", subject: "CN", type: "Theory", batch: "All" },
         { time: "11:00–1:00", subject: "DBMS / CHMA", type: "Lab", batch: "b1 / b2" },
         { time: "1:30–2:30", subject: "Python", type: "Theory", batch: "All" },
@@ -31,7 +31,7 @@ const timetableData = {
     ],
     Friday: [
         { time: "9:00–11:00", subject: "Python / CN", type: "Lab", batch: "b1 / b2" },
-        { time: "11:00–12:00", subject: "Kannada", type: "Theory", batch: "Optional" },
+        { time: "11:00–12:00", subject: "Kannada", type: "Theory", batch: "All" },
         { time: "12:00–1:00", subject: "CHMA", type: "Theory", batch: "All" },
         { time: "1:30–3:30", subject: "DBMS / CHMA", type: "Lab", batch: "b2 / b1" },
         { time: "3:30–4:30", subject: "Sports", type: "Activity", batch: "All" }
@@ -39,7 +39,7 @@ const timetableData = {
     Saturday: [
         { time: "9:00–11:00", subject: "Python / CN", type: "Lab", batch: "b2 / b1" },
         { time: "11:00–12:00", subject: "DBMS", type: "Theory", batch: "All" },
-        { time: "12:00–2:00", subject: "Balake Kannada", type: "Theory", batch: "Optional" }
+        { time: "12:00–2:00", subject: "Balake Kannada", type: "Theory", batch: "Only BK students" }
     ]
 };
 
